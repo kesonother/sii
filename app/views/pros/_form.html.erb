@@ -1,0 +1,97 @@
+<%= form_for(@pro) do |f| %>
+  <% if @pro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pro.errors.count, "error") %> prohibited this pro from being saved:</h2>
+
+      <ul>
+      <% @pro.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	
+
+
+			<div class="formElGroup clear" style="position: relative; overflow: visible;">
+				<div class="formElGroup clear ClickToggleContainer2">
+					<div class="inlineblock formEl">
+						<div class="clear formEl businessFieldContainer">
+							 <%= f.label :categories %><br />
+							 <%= f.select :category, ["Plombier","Photographer","Animation","Télémarketing","Secretariat","Vente",
+							 	"Enqueteur","Manutention","Informatique"] %>
+							<br>
+						</div>
+						<div class="clear formEl businessFieldContainer">
+							<div class="label businessField"><%= f.label :business_name,"Nom de l'entreprise" %></div>
+							<%= f.text_field :business_name ,"style"=> "width:16em; margin-bottom:.5em"%>
+							<br>
+    					</div>
+
+						<div class="clear formEl WordCountContainer" style="width: 580px;">
+							<div class="label"><%= f.label :business_description,"Description de votre service" %></div>
+							<%= f.text_area :business_description ,"class" =>"provider-edit-field ResizableTextarea WordCount"%>
+							<br>
+						</div>
+						<div class="clear formEl businessFieldContainer">
+							<div class="label businessField"><%= f.label:headline,"Titre du profil" %></div>
+							<%= f.text_field :headline ,"style"=> "width:16em; margin-bottom:.5em"%>
+							<br>
+    					</div>    
+						<div class="clear formEl">
+							<div class="label"><%= f.label :mainphone,"Numéro de téléphone" %></div>
+							<%= f.text_field :mainphone,"class"=>"provider-edit-field" %>
+														<br>
+						</div>
+						<%= f.fields_for(@address) do |address| %>
+	  						<div class="clear formEl businessFieldContainer">
+								<div class="label businessField"><%= address.label :street,"Adresse" %></div>
+								<%= address.text_field :street%>
+								<br>
+							</div>
+							<div class="formEl inlineblock businessFieldContainer top">
+								<div class="label"><%= address.label :city ,"Ville"%></div>
+								 <%= address.text_field :city %>
+							</div>
+							<div class="formEl inlineblock businessFieldContainer top" style="margin-right:0">
+								<div class="label"><%= address.label :zipcode ,"Code postal"%></div>
+								<%= address.text_field :zipcode %>
+	
+							</div>
+						<% end %>
+
+						<div class="clear formEl businessFieldContainer">
+							<div class="label businessField"><%= f.label :website ,"site web"%></div>
+							<%= f.text_field :website %>
+							<br>
+						</div>
+					</div>
+				</div>
+
+				<div class="formElGroup">
+					<div class="formEl inlineblock" style="vertical-align:top;">
+						<div class="label">Facebook URL</div>
+						<input class="provider-edit-field" type="text" style="width:17.5em;" value="" name="facebook_url">
+					</div>
+					<div class="formEl inlineblock" style="vertical-align:top;">
+						<div class="label">Twitter Username</div>
+						<div class="preText inlineblock">@</div>
+						<input class="inlineblock" type="text" style="width:12.5em" value="" name="twitter">
+						<br>
+					</div>
+				</div>
+				<div class="formElGroup">
+					<div class="formEl inlineblock" style="vertical-align:top;">
+						<div class="label">Blog URL</div>
+						<input class="provider-edit-field" type="text" style="width:17.5em;" value="" name="blog_url">
+					</div>
+				</div>
+				<div class="formElGroup">
+					<div class="clear formEl">
+						<%= f.submit "Enregistrer les modifications","class"=>"blueButton continueButton" %>
+					</div>
+				</div>
+			</div>
+  
+<% end %>
+

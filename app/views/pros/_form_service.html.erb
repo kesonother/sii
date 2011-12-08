@@ -1,0 +1,102 @@
+			<div id="serviceGroupListContainer" class="right sideContentBox ClickToggleTarget" style="width:450px; border:1px solid #2C91C0; padding:15px;">
+				<header>
+					<h4 style="font-size:16px; padding-bottom:10px; margin-bottom:15px; border-bottom:1px solid #dedede; color:#454545;"> Click on a service to edit it. Drag the services or the service groups to reorder them on your profile! </h4>
+				</header>
+				<div id="list-services">
+				</div>
+				<ul id="servicegroupList" class="servicegroupList ui-sortable">
+					<li id="sglist_22862" class="service_group_container" title="drag this section up or down to reorder, or click to edit" style="position:relative;">
+						<div class="service_group_name service_group link" style="color:#444">
+						Mes services
+						</span>
+						</div>
+						<ul id="serviceList_22862" class="serviceList ui-sortable">
+<%if current_user.pro.services.exists? %>
+<% @services.each do |service| %>
+						
+						<li id="list1_65471" class="ServiceContainer odd " lang="/provider/24283/service65471" style="position:relative; overflow:hidden; padding:0;" title="drag and drop to reorder service, or click the name to edit">
+						<div class="blue75" style="padding:1em; z-index:100; position:relative;">
+						<div class="service_infofull">
+						<span class="service_name link teal blue75whiteText"><%= link_to service.service_name, edit_service_path(service)%> </span>
+						</div>
+						<div class="full" style="padding:.4em 0; overflow:hidden;">
+						<div class="right blue75text"><% service.service_name %></div>
+						</div>
+						<div class="service_description clear blue75text"><% service.description %></div>
+						</div>
+						</li>
+<% end %>
+<%end%>							
+						</ul>
+					</li>
+				</ul>
+				<div style="font-size:1.2em; color:#999; padding:1em 0 0; border-top:1px solid #dddddd;">
+					As you add services on the left and save them, they show up here. You can drag and drop a service or an entire service group to reorder them.
+					<br>
+					<br>
+					Click a service name to edit that service, or a service group name to edit that service group.
+				</div>
+			</div>
+			<div class="ClickToggleContainer">
+<%= form_for(@service) do |f| %>
+  <% if @service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+      <ul>
+      <% @service.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+					<div class="formElGroup">
+						<div class="inlineblock formEl">
+							<div class="label"><%= f.label :service_name %></div>
+							<%= f.text_field :service_name %>
+						</div>
+					</div>
+					<div class="formElGroup">
+						<div class="inlineblock formEl">
+							<div class="label">
+								<span class="ClickToggleTarget"><%= f.label :duration, "Durée" %><br /></span>
+								<span class="ClickToggleTarget" style="display:none">Initial</span>
+							</div>
+						     <%= f.select :duration, ["15 minutes","30 minutes","45 minutes","1 heures","1 heures 15","1 heures 30",
+						     	"1 heure 45","2 heures","2 heures 15","2 heures 30","2 heures 45","3 heures","3 heures 15",
+						     	"3 heures 30","3 heures 45","4 heures","5 heures","6 heures","7 heures","8 heures"] %>
+						</div>
+					</div>
+					<div class="formElGroup ClickToggleContainer">
+						<div class="inlineblock formEl">
+							<div class="label"><%= f.label :price,"Prix" %></div>
+							<span class="form_text">$</span>
+							<%= f.text_field :price %>
+						</div>
+						<div class="inlineblock formEl" style="vertical-align:super">
+							<input id="id_cost_and_up_1" type="checkbox" style="height:1em; width:1em" name="cost_and_up" value="1">
+							<label class="form_text" for="id_cost_and_up_1">et plus</label>
+						</div>
+					</div>
+					<div class="formElGroup">
+						<div class="formEl">
+							<div class="label"><%= f.label :description %></div>
+							<%= f.text_area :description %>
+						</div>
+					</div>
+
+					<div class="formElGroup">
+						<div class="formEl">
+							<%= f.check_box :display %> 
+							<%= f.label :display %>
+						</div>
+					</div>
+					<div class="formElGroup">
+						<div class="inlineblock formEl">
+							<%= f.submit %>
+						</div>
+					</div>
+<% end %>
+			</div>
+			<div style="clear:both;"></div>			

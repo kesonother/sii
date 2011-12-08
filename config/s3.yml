@@ -1,0 +1,12 @@
+development:
+  bucket: dev-choopro
+  access_key_id: AKIAJHYVQJU4YKTAFS4A
+  secret_access_key: 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
+test:
+  bucket: choopro-dev
+  access_key_id: AKIAJHYVQJU4YKTAFS4A
+  secret_access_key: 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
+production:
+  bucket: dev-choopro
+  access_key_id: AKIAJHYVQJU4YKTAFS4A
+  secret_access_key: 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

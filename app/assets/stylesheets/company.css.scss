@@ -1,0 +1,126 @@
+// Place all the styles related to the company controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/****About style*********
+*************************/
+#about-wrap #about-sidebar {
+    color: #999999;
+    float: left;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    height: 100%;
+    line-height: 40px;
+    padding: 90px 0;
+    width: 200px;
+}
+
+#about-wrap #about-sidebar ul {
+    float: right;
+}
+#about-wrap #about-sidebar ul li {
+    border-bottom: 1px solid white;
+    /*border-top: 1px solid #DDDDDD;*/
+    margin-right: 30px;
+    padding-left: 10px;
+    width: 160px;
+}
+#about-wrap #about-sidebar ul li.active a {
+    color: #333333;
+}
+
+#about-wrap #about-sidebar ul li a, #about-wrap #about-sidebar ul li a:visited {
+    color: #888888;
+    display: block;
+}
+
+#about-wrap a {
+    -moz-transition-duration: 0.33s;
+    -moz-transition-property: color;
+    /*color: #478FB3;*/
+    outline: 0 none;
+    text-decoration: none;
+}
+
+#about-wrap.about-us .folder.about-us {
+    padding-right: 10px;
+    width: 720px;
+}
+
+#about-wrap .folder {
+    border-left: 1px solid #D9D7D7;
+    
+    float: left;
+    min-height: 350px;
+    padding: 0 20px 150px;
+    position: relative;
+    width: 730px;
+}
+#about-wrap .folder h1 {
+    border-bottom: 1px solid #D9D7D7;
+    color: #3B4853;
+    font: bold 24px/39px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0 0 20px;
+    padding: 10px 0;
+    position: relative;
+}
+
+#about-wrap.about-us h1 {
+    border: medium none;
+    font-size: 30px;
+    line-height: 45px;
+    margin: 15px 0;
+    padding: 0;
+}
+#about-wrap.about-us h1 span:first-child {
+    color: #999999;
+    font-size: 20px;
+}
+#about-wrap .folder h2 {
+    color: #3B4853;
+    font: bold 18px/24px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0 0 10px;
+    position: relative;
+}
+
+#about-wrap .about-us h2 {
+    /*color: #A9A9A9;*/
+    font: bold 22px/26px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 10px 0 20px;
+}
+
+#about-wrap .folder img {
+    max-width: 730px;
+}
+
+#about-wrap.about-us img {
+    margin: 0 0 20px;
+}
+#about-wrap .folder h3 {
+    color: #666666;
+    font: bold 16px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 0 0 5px;
+}
+
+#about-wrap .about-us h3 {
+    color: #333333;
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+#about-wrap .folder > p {
+    line-height: 20px;
+    margin: 0 0 20px;
+}
+
+#about-wrap .about-us p {
+    color: #767676;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0 0 20px;
+}
+
+#about-wrap .about-us h2.large-summary-small {
+    color: #A9A9A9;
+    font: bold 22px "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: 10px 0 20px;
+}

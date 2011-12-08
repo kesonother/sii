@@ -1,0 +1,236 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/****home spootlight*****/
+#running-board-wrap {
+  background: none repeat scroll 0 0 #D5E9F2;
+    border-bottom: 1px solid #CCCCCC;
+margin-bottom: 0;
+}
+#spootlight{
+
+  height:360px;
+  margin-bottom: 2em;
+  font-family: "Helvetica Neue","Gotham Rounded",Helvetica,Arial,sans-serif;
+}
+.ui-box{
+background-color: white;/*rgba(0, 0, 0, 0.07);*/
+padding: 0px;
+overflow: hidden;
+-moz-border-radius: 8px;
+-webkit-border-radius: 8px;
+-o-border-radius: 8px;
+-ms-border-radius: 8px;
+-khtml-border-radius: 8px;
+border-radius: 8px;
+
+border: 1px solid #DFDFDF;
+}
+
+
+
+
+
+#spootlight .ad-text  {
+
+    width: 460px;
+  display: inline-block;
+    font-size: 21px;
+    margin: 0 0 0 20px;
+    text-align: left;
+
+}
+
+#spootlight .ad-video{
+
+    background-position: right bottom;
+    width: 480px;
+    display: inline-block;
+    margin: 30px 0 0 0;
+    vertical-align: top;
+
+}
+
+#spootlight .ad-text .ad-h1 {
+  color:#333333;
+    font-size: 27px;
+  font-weight:bold;
+    margin-top: 100px;
+    /*text-shadow: 0 1px 0 #555;*/
+  word-spacing: 1px;
+  line-height: 1.3;
+}
+
+#spootlight .ad-text .ad-h2 {
+  color:#333333;
+    font-size: 18px;
+    margin-top: 35px;
+    margin-bottom: 2em;
+}
+
+#spootlight .ad-text a {
+
+  padding: 0.8em 2em 0.8em 2em;
+    color: #fff;
+}
+#spootlight .ad-text span.ft {
+  color:#333333;
+    font-family: 'Gochi Hand', cursive;
+    font-size:16px;
+    font-weight:bold;
+}
+.request-service {
+    float: left;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 30px 0 0;
+    padding: 15px 30px;
+}
+
+.button-orange {
+  background: #F05836;/*#676767;*/;
+  color: #fff;
+  text-shadow: none !important; 
+  -moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-o-border-radius: 5px;
+-ms-border-radius: 5px;
+-khtml-border-radius: 5px;
+border-radius: 5px;
+
+}
+.button-orange:hover, .button-orange:active {
+  background: #F97257;
+border: 1px solid #F05836;
+box-shadow: 0 2px 5px rgba(1, 1, 1, 0.3);
+color: #FFFFFF;
+}
+
+.button-bleu {
+  background: #2C91C0;/*#676767;*/;
+  color: #fff;
+  text-shadow: none !important; 
+  -moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-o-border-radius: 5px;
+-ms-border-radius: 5px;
+-khtml-border-radius: 5px;
+border-radius: 5px;
+
+}
+.button-bleu:hover, .button-bleu:active {
+border: 1px solid #2C91C0;
+background-color:#43A9D8;
+box-shadow: 0 2px 5px rgba(1, 1, 1, 0.3);
+color: #FFFFFF;
+}
+a.about-link{
+color:#2C91C0;
+}
+/**contant for general page***/
+#content{
+/*width: 980px;
+  margin-top: 2.5em;
+background-color: #2C91C0;/*#F0EEE4;*/
+}
+
+#step{
+height:300px;
+/*border: 1px solid #E1DCC8;*/
+background-color: #EDEBE1;
+border-bottom: 1px solid #CCCCCC;
+border-top: 1px solid transparent;
+}
+#step ul{
+  margin-left:60px;
+  
+}
+#step ul li{
+float:left;
+height:250px;
+width:230px;
+padding:10px;
+margin-right:40px;
+}
+
+#step ul li span{
+
+  font-weight:bold;
+}
+
+#attract-pro{
+/*background-color: #F0EEE4;*/
+height:140px;
+overflow:hidden;
+padding:15px;
+border-bottom: 1px solid #CCCCCC;
+color:#F05836;
+}
+
+#attract-pro h2 a{
+font-family:calibri;
+font-size:20px;
+color:#fff;
+padding:4px 20px 4px 20px;
+margin-left:10px;
+}
+#attract-pro p{
+font-size:17px;
+color:#434343;
+}
+#general-info{
+height:400px;
+
+background-color: #F0EEE4;
+}
+.title-1{
+font-family:calibri;
+font-size:25px;
+font-weight:bold;
+}
+.title-2{
+font-family:calibri;
+font-size:21px;
+font-weight:bold;
+}
+.popular-cities,.popular-services,.announcement{
+width:300px;
+height:300px;
+float:left;
+
+margin-top:7px;
+display: inline-block;
+    margin-right: 14px;
+    vertical-align: top;
+}
+
+.popular-services{
+width:310px;
+}
+.first-info{
+    margin-left: 18px;
+}
+
+#general-info div>ul{
+
+float: left;
+width: 138px;
+padding:0;
+margin:0 10px 0 0;
+}
+
+#general-info div>ul.col-a{
+width: 120px;
+}
+#general-info div>ul.col-b{
+width: 165px;
+
+}
+#general-info div>ul li a{
+color:#3082A5;
+}
+#general-info div>ul li a:hover{
+text-decoration:underline;
+}

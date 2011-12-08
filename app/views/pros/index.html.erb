@@ -1,0 +1,24 @@
+<% title "Liste des pros" %>
+
+<h1>Listing pros</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pros.each do |pro| %>
+  <tr>
+  	<td><%= pro.business_name %></td>
+    <td><%= link_to 'Show', pro %></td>
+    <td><%= link_to 'Edit', edit_pro_path(pro) %></td>
+    <td><%= link_to 'Destroy', pro, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pro', new_pro_path %>

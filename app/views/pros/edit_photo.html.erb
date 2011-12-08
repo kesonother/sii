@@ -1,0 +1,26 @@
+<section id="about-wrap" class="body ui-box">
+	<%= render 'menu_account' %>
+	
+	<div id="content-account">
+		<article class="row">
+			<div class="promote-header">
+				<h1>Editer vos photos</h1>
+				<p>Ces photos seront visibles sur votre profil.</p>
+			</div>
+
+			<div id="photo-profil">
+			<%if current_user.pro.pictures.exists?%>
+				<%= image_tag @pictures.image.url(:medium)%>
+				 <div class="actions">
+			      <%= link_to "Modifier", edit_photos_url(:id => current_user.pro) %> |
+			      <%= link_to "Supprimer", @pictures, :confirm => 'Are you sure?', :method => :delete %>
+			    </div>
+			<%else%>
+			<%= render 'form_photo' %>
+			<%end%>
+			</div>
+			
+		</article>
+	</div>
+</section>
+

@@ -1,0 +1,25 @@
+	<nav id="account-topbar">
+		<ul>
+			<li >
+				<%= link_to 'Mes informations', edit_pro_path(current_user.pro) %>
+			</li>
+			<li >
+				<%= link_to 'Photos', edit_photo_url(current_user.pro) %>
+			</li>
+			<li >
+				<%= link_to 'Services', edit_services_url(current_user.pro) %>
+			</li>
+			<li >
+				<a href="/about/">Outils de Promotion</a>
+			</li>
+			<li >
+				<a href="/about/">Notifications</a>
+			</li>
+			<li >
+				<a href="/about/">Param&egrave;tres</a>
+			</li>
+			<li >
+				<a href="/about/">Mot de passe</a>
+			</li>
+		</ul>
+	</nav>

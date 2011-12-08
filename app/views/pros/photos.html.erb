@@ -1,0 +1,26 @@
+<section id="about-wrap" class="body ui-box">
+	<%= render 'menu_account' %>
+	
+	<div id="content-account">
+		<article class="row">
+			<div class="promote-header">
+				<h1>Editer vos photos</h1>
+				<p>Ces photos seront visibles sur votre profil.</p>
+			</div>
+
+			<%if current_user.pro.pictures.exists?%>
+				<%= image_tag @pictures.image.url(:medium)%>
+				<%= form_for(@pictures, :html => { :multipart => true }) do |f| %>
+					  <%= f.label :image %>
+			  		<%= f.file_field :image %>
+				  <p><%= f.submit "Modifier" %></p>
+				<% end %>
+			
+			<%else%>
+			
+			<%= render 'pictures/form' %>
+			<%end%>
+			
+		</article>
+	</div>
+</section>

@@ -1,0 +1,245 @@
+// Place all the styles related to the pros controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+  Featured
+*****************/
+#featured {
+  margin-top: 2.5em;
+  margin-bottom: 2em;
+  padding: 0px;
+  width: 980px;
+}
+
+#featured article{
+margin-top:20px;
+}
+
+#featured figure {
+  border: 2px solid #eee;
+  float: left;
+  width: 175px;
+}
+#featured figure img {display: block; float: left;}
+
+#featured h2 {color: #268CA0; font-size: 1.714em; margin-bottom: 0.333em;}
+#featured h3 {font-size: 1.429em; margin-bottom: .5em;}
+
+#featured h3 a:link, #featured h3 a:visited {color: #000305; text-decoration: none;}
+#featured h3 a:hover, #featured h3 a:active {color: #fff;}
+
+.quick-profil{
+  float: left;
+  left: 0;
+    margin: 0 1.5em 0 10px;;
+    padding: 0.8em;
+    top: 0;
+    width: 180px;
+  /*border:1px solid #999;*/
+}
+
+.detail-profil{
+    float: left;
+    padding-bottom: 3em;
+    width: 416px;
+}
+.address{
+    background: none repeat scroll 0 0 #D1ECFF;
+    font-size: 0.9em;
+    padding: 5px 9px 3px 8px;
+  margin-bottom: 10px;
+}
+.detail-profil > .text > p {
+
+    letter-spacing: 0.1px;
+    line-height: 20px;
+    padding: 17px 0 3px;
+}
+
+a.contactMe{
+margin-left:24px;
+float:left;
+width:250px;
+padding:8px;
+text-align:center;
+background-color: #2C91C0;
+border: 1px solid #2781AA;
+border-radius: 3px 3px 3px 3px;
+box-shadow: 0 2px 5px rgba(1, 1, 1, 0.3);
+color: #FFFFFF;
+cursor: pointer;
+font-family: InterstateBold;
+font-size: 14px;
+font-weight: bold;
+padding: 9px 5px;
+
+  
+}
+a.contactMe:hover{
+border: 1px solid #2C91C0;
+background-color:#43A9D8;
+text-shadow: 0 1px 5px #672101;
+}
+
+/**fin featured****/
+
+
+/*
+*****Service******/
+.rback{
+border: 1px solid #E1DCC8;
+background-color: #F0EEE4;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+-o-border-radius: 10px;
+-ms-border-radius: 10px;
+-khtml-border-radius: 10px;
+border-radius: 10px;
+}
+.block{
+margin-bottom:20px;
+
+}
+
+.services{
+    float: left;
+    width: 660px;
+
+}
+.services > section {
+    width: 660px;
+}
+
+.services > section > header {
+  background: #2C91C0;/*#676767;*/
+    border-top: 0.1em solid #676767;
+    display: block;
+    height: 2.6em;
+    margin-bottom: 2em;
+}
+
+.services > section > header  >h1{
+    /*background: none repeat scroll 0 0 #676767;*/
+  
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-size: 1.6em;
+    letter-spacing: 0.2px;
+    padding: 4px 13px 0 9px;
+}
+
+.servicesTableContainer {
+    padding: 0 2.1em 4.7em 1em;
+}
+
+.services > section > div > table {
+    height: 25em;
+}
+.services > section > div > table  > tbody > tr{
+  border-bottom: 0.1em solid #E5E5E5;
+}
+.services > section > div > table  > tbody > tr > td{
+    letter-spacing: 0.7px;
+    line-height: 2.4em;
+    min-width: 6.5em;
+    padding-left: 0.7em;
+
+}
+.services > section > div > table  > tbody > tr > td >h1{
+  font-size: 1.2em;
+  margin-bottom:10px;
+  width:100%;
+  /*background: none repeat scroll 0 0 #F5F4EF;*/
+}
+.services > section > div > table  > tbody > tr > td > span{
+  color: #797979;
+    display: block;
+    font-style: italic;
+  font-size: 0.9em;
+    line-height: 1.2em;
+    margin-top: -0.5em;
+    padding-bottom: 0.5em;
+}
+.services > section > div > table  > tbody > tr > td.price{
+    text-align: center;
+    width: 9em;
+}
+.services > section > div > table  > tbody > tr > td.time{
+    text-align: center;
+}
+
+.services > section > header  > a {
+
+    color: #47667B;
+    float: right;
+    font-size: 1em;
+    letter-spacing: 0.1px;
+    padding: 0 0 0.2em 1.4em;
+    position: relative;
+    right: 1.5em;
+    top: 2.7em;
+}
+
+/***fin service****/
+
+
+/*
+****Contact*****/
+
+
+.map{
+
+margin-bottom:10px;
+}
+
+.contact{
+    float: right;
+    width: 300px;
+
+}
+.contact > section > header {
+   border-top: 0.1em solid #676767;
+
+    display: block;
+    height: 2.2em;
+  background: #2C91C0;
+  margin-bottom:10px;
+  }
+  
+.contact > section > header  >h1{
+/*background: none repeat scroll 0 0 #676767;*/
+    color: #FFFFFF;
+    display: block; 
+    float: left;
+    font-size: 1.2em;
+    padding: 2px 10px 4px;
+  
+}
+
+.contact > div .local{
+
+}
+dl.dlist.inline dt {
+clear: left;
+float: left;
+width: 70px;
+}
+
+dl.dlist dt {
+color: #777;
+font-size: 90%;
+margin-bottom: 2px;
+}
+dl.dlist.inline dd {
+word-wrap: break-word;
+margin-left: 78px;
+}
+
+dl.dlist dd {
+margin-bottom: 10px;
+}
+
+
+/****fin contact******/
