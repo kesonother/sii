@@ -11,13 +11,8 @@ test:
 
 # set these environment variables on your prod server
 production:
-  #host: dbh83.mongolab.com
-  #port: 27837
-  #username: test
-  #password: test
-  #database: heroku_app1804848
-  host: ds029197.mongolab.com
-  port: 29197
-  username: test
-  password: test
-  database: heroku_app1960833
+  host: dbh83.mongolab.com
+  port: 27837
+  username: wsonke
+  password: jaunes
+  database: choopro_development
