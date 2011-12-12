@@ -1,0 +1,62 @@
+<%= form_for(@request) do |f| %>
+  <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+      <ul>
+      <% @request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+			<h2>1. D&eacute;crivez votre besoin</h2>
+			<div class="formElGroup">
+				<div class="formEl inlineblock">
+
+				 <div class="label"><%= f.label :category ,"Quel professionnel ?*"%></div>
+				 <%= f.select :category, ["Plombier","Photographer","Animation","Télémarketing","Secretariat","Vente",
+				 	"Enqueteur","Manutention","Informatique"],"class"=>"id_field_group"%>
+				</div>
+				<div class="formEl inlineblock" style="vertical-align:top;">
+					    <div class="label"><%= f.label :zipcode,"Dans quelle localité ?*" %></div>
+					    <%= f.text_field :zipcode,"class"=>"provider-edit-field","placeholder"=>"92600" %>
+				</div>
+			</div>
+
+			<div class="formElGroup">
+				<div class="clear formEl WordCountContainer" style="width: 580px;">
+					<div class="label"></div>
+					<div class="label"><%= f.label :details,"Détaillez votre besoin" %></div>
+							<%= f.text_area :details ,"class" =>"provider-edit-field ResizableTextarea WordCount",
+							"placeholder"=>"Donnez une description d&eacute;taill&eacute;e de votre projet, ceci permettra aux professionels de repondre au mieux &agrave; vos attentes."%>
+				</div>
+			</div>
+			
+			<h2>2. Votre contact</h2>
+			<div class="formElGroup">
+				<div class="formEl inlineblock" style="vertical-align:top;">
+					<div class="label"><%= f.label :last_name,"Nom*" %></div>
+					<%= f.text_field :last_name ,"class"=>"provider-edit-field"%>
+				</div>
+				<div class="formEl inlineblock" style="vertical-align:top;">
+					<div class="label"><%= f.label :first_name,"Prénom*" %></div>
+					<%= f.text_field :first_name ,"class"=>"inlineblock"%>
+				</div>
+			</div>
+			<div class="clear formEl businessFieldContainer">
+				<div class="label businessField"><%= f.label :email,"Adresse email*" %></div>
+				<%= f.text_field :email%>
+				<br>
+			</div>
+			
+			
+			<p>En cliquant "poster mon besoin" vous indiquez que vous avez lu et approuv&eacute; les <a href="">Conditions d'utilisation</a> et les <a href="">Mentions l&eacute;gales</a></p>
+			<div class="formElGroup">
+				<div class="clear formEl">
+					    <%= f.submit "Envoyer","class" => "blueButton continueButton"%>
+				</div>
+			</div>
+
+<% end %>

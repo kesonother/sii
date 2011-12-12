@@ -10,3 +10,6 @@ production:
   bucket: dev-choopro
   access_key_id: AKIAJHYVQJU4YKTAFS4A
   secret_access_key: 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
+  
+#config pour heroku
+#heroku config:add S3_KEY=AKIAJHYVQJU4YKTAFS4A S3_SECRET=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

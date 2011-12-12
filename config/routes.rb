@@ -1,4 +1,14 @@
 Choopro::Application.routes.draw do
+  get "messages/inbox"
+
+  get "messages/sent"
+
+  get "message/inbox"
+
+  get "message/sent"
+
+  resources :requests
+
   get "company/about"
 
   get "company/equipe"

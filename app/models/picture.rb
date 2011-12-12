@@ -6,7 +6,7 @@ class Picture
   embedded_in :pro
   
   has_mongoid_attached_file :image,
-  :styles => { :medium => "500x500>",:thumb => "50x50>",:small => "200x200>" },
+  :styles => { :medium => "500x500>",:thumb => "50x50>",:small => "175x175>" },
   :storage => :s3,
   :s3_credentials => File.join(Rails.root, 'config', 's3.yml'),
   #:s3_credentials => {:access_key_id => ENV['S3_KEY'],:secret_access_key => ENV['S3_SECRET']},
