@@ -3,10 +3,6 @@ Choopro::Application.routes.draw do
 
   get "messages/sent"
 
-  get "message/inbox"
-
-  get "message/sent"
-
   resources :requests
 
   get "company/about"

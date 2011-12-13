@@ -23,7 +23,7 @@ gem "paperclip"
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem "aws-s3",            :require => "aws/s3"
 gem 'geocoder'
-
+gem 'htmlentities'
 #gem 'postmark-rails', '0.4.0'
 gem 'jquery-rails'
 

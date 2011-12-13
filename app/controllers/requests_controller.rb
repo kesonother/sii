@@ -24,6 +24,12 @@ class RequestsController < ApplicationController
   # GET /requests/new
   # GET /requests/new.json
   def new
+    #if params[:query].nil?
+      #@request = Request.new(params[:request]) 
+      #@pro = Pro.new
+    #else
+      #@request = current_user.requests.new
+    #end
     @request = Request.new
 
     respond_to do |format|
@@ -40,8 +46,12 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.json
   def create
-    @request = Request.new(params[:request])
-
+    #@request = Request.new(params[:request])
+    if current_user.nil?
+      @request = Request.new(params[:request])
+    else
+      @request = current_user.requests.new(params[:request]) #Request.new(params[:request])    
+    end
     respond_to do |format|
       if @request.save
         format.html { redirect_to @request, notice: 'Request was successfully created.' }

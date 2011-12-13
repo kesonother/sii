@@ -1,6 +1,9 @@
+# encoding: utf-8
 class UserMailer < ActionMailer::Base
 
   default :from => "\"choopro\" <kesonother@gmail.com>"
+
+  
 
   def welcome_email(user)
     @user = user
@@ -9,7 +12,8 @@ class UserMailer < ActionMailer::Base
   end
   
   def receive_post(email)
-    mail(:to => email, :subject => ("Requete recu").html_safe)
+
+    mail(:to => email, :subject => "Requête reçu")
   end
   
 end

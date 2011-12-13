@@ -15,6 +15,7 @@ class Request
   field :last_name
   field :email
   
+  belongs_to :user
   after_create :send_mail
   
   def send_mail

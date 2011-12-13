@@ -12,8 +12,11 @@ class User
   #validates_presence_of :email
   # Setup accessible (or protected) attributes for your model  
   attr_accessible :first_name,:last_name,:email, :password, :password_confirmation  
-  after_create :send_mail
+
   has_one :pro
+  has_many :requests
+  
+  after_create :send_mail
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token['extra']['raw_info']

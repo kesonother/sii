@@ -1,2 +1,22 @@
-<h1>Messages#sent</h1>
-<p>Find me in app/views/messages/sent.html.erb</p>
+
+
+<section id="about-wrap" class="body ui-box">
+	<div id="content-account">
+		<article class="row">
+			
+			<div class="promote-header">
+				<h1>Message</h1>
+			</div>
+
+			<%= render 'messages_nav' %>
+			<table>
+			<% @messages.each do |mail| %>
+			  <tr>
+			  	<td><%= link_to mail.subject, request_path(mail) %></td>
+			  </tr>
+			<% end %>
+			</table>
+			
+		</article>
+	</div>
+</section>
