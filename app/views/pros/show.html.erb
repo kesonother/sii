@@ -41,7 +41,7 @@
 			<div class="servicesTableContainer">
 				<table>
 					<tbody>
-					<%if current_user.pro.services.exists? %>
+					<%if @pro.services.exists? %>
 					<% @services.each do |service| %>
 												
 						<tr>

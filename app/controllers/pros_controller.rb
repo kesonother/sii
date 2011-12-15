@@ -20,15 +20,16 @@ class ProsController < ApplicationController
   # GET /pros/1
   # GET /pros/1.json
   def show
-    @pro = Pro.find(params[:id])
+    #@pro = Pro.find(params[:id])
+    @pro = Pro.find_by_business_name(params[:business_name])
     @address = @pro.address
     
-    if current_user.pro.pictures.exists?
-      @pictures = current_user.pro.pictures.first()  
+    if @pro.pictures.exists?
+      @pictures = @pro.pictures.first()  
     end
     
-    if current_user.pro.services.exists?
-      @services = current_user.pro.services
+    if @pro.services.exists?
+      @services = @pro.services
     end
     
     respond_to do |format|

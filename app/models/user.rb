@@ -7,16 +7,24 @@ class User
 
   field :first_name
   field :last_name
+  field :author
   
   validates_uniqueness_of :email 
   #validates_presence_of :email
   # Setup accessible (or protected) attributes for your model  
   attr_accessible :first_name,:last_name,:email, :password, :password_confirmation  
-
+  after_create :send_mail
+  
   has_one :pro
   has_many :requests
   
-  after_create :send_mail
+  has_many :sent_messages, :class_name => "Message", :foreign_key => "author_id"
+  has_many :received_messages, :class_name => "MessageCopy", :foreign_key => "recipient_id"
+  has_many :folders 
+    
+  def author
+    [first_name, last_name].compact.join(' ')
+  end
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token['extra']['raw_info']

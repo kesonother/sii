@@ -6,28 +6,21 @@ Choopro::Application.routes.draw do
   resources :requests
 
   get "company/about"
-
   get "company/equipe"
-
   get "company/carriere"
-
   get "company/logo"
-
   get "company/contact"
-
   get "company/presse"
 
   resources :services
-
   resources :pictures
-
   resources :pros
-
+  
   devise_for :admins
-
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get "pros/new"
   get "pros/create"
+  match ":business_name" => 'pros#show', :as => :business_name
   get "pros/edit"
   match 'pros/:id/edit' => 'pros#edit', :as => :edit_profil
   get "pros/update"

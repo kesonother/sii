@@ -25,4 +25,8 @@ class Pro
   #has_many :bids
 
   embeds_many :pictures
+  
+  def self.find_by_business_name(business_name)
+    user = where(:business_name => business_name).first
+  end
 end

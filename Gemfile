@@ -27,6 +27,7 @@ gem 'htmlentities'
 #gem 'postmark-rails', '0.4.0'
 gem 'jquery-rails'
 
+gem 'mongoid_acts_as_tree'
 # Use unicorn as the web server
 # gem 'unicorn'
 
