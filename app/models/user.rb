@@ -21,11 +21,21 @@ class User
   has_many :sent_messages, :class_name => "Message", :foreign_key => "author_id"
   has_many :received_messages, :class_name => "MessageCopy", :foreign_key => "recipient_id"
   has_many :folders 
-    
+
   def author
     [first_name, last_name].compact.join(' ')
   end
   
+  before_create :build_inbox
+
+  def inbox
+    folders.find_by_name("Inbox")
+  end
+
+  def build_inbox
+    folders.build(:name => "Inbox")
+  end
+      
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token['extra']['raw_info']
     if user = User.where(:email => data["email"]).first #User.find_by_email(data["email"])

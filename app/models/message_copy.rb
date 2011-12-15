@@ -7,5 +7,6 @@ class MessageCopy
   belongs_to :message
   belongs_to :recipient, :class_name => "User"
   belongs_to :folder
+  has_many :message_recipients
   delegate   :author, :created_at, :subject, :body, :recipients, :to => :message
 end
