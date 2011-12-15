@@ -1,7 +1,10 @@
 class MessagesController < ApplicationController
   def inbox
   end
-
+  
+  def show
+  end
+  
   def sent
     
     @messages = current_user.requests.all

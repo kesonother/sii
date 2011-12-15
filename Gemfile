@@ -28,6 +28,7 @@ gem 'htmlentities'
 gem 'jquery-rails'
 
 gem 'mongoid_acts_as_tree'
+gem 'will_paginate', '~> 3.0'
 # Use unicorn as the web server
 # gem 'unicorn'
 
