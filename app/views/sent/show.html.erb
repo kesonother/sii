@@ -1,2 +1,5 @@
-<h1>Sent#show</h1>
-<p>Find me in app/views/sent/show.html.erb</p>
+<h2>Sent: <%=h(@message.subject) %></h2>
+
+<p><strong>Sent:</strong> <%= @message.created_at.to_s(:long) %></p>
+
+<pre><%=h @message.body %></pre>

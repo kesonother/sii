@@ -13,10 +13,11 @@ class User
   #validates_presence_of :email
   # Setup accessible (or protected) attributes for your model  
   attr_accessible :first_name,:last_name,:email, :password, :password_confirmation  
-  after_create :send_mail
+  after_create :send_mail,:create_inbox
   
   has_one :pro
   has_many :requests
+  has_many :request_copies
   
   has_many :sent_messages, :class_name => "Message", :foreign_key => "author_id"
   has_many :received_messages, :class_name => "MessageCopy", :foreign_key => "recipient_id"
@@ -26,8 +27,6 @@ class User
     [first_name, last_name].compact.join(' ')
   end
   
-  before_create :build_inbox
-
   def inbox
     folders.find_by_name("Inbox")
   end
@@ -35,7 +34,11 @@ class User
   def build_inbox
     folders.build(:name => "Inbox")
   end
-      
+
+  def create_inbox
+    folders.create(:name => "Inbox")
+  end
+     
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token['extra']['raw_info']
     if user = User.where(:email => data["email"]).first #User.find_by_email(data["email"])

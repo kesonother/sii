@@ -4,6 +4,10 @@ Choopro::Application.routes.draw do
   resources :pictures
   resources :pros
   resources :requests
+  resources :messages
+  resources :message_copies
+  resources :folders
+  resources :message_recipients
   devise_for :admins
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
@@ -11,6 +15,9 @@ Choopro::Application.routes.draw do
   get "sent/index"
   get "sent/show"
   get "sent/new"
+  get "sent/create"
+  match 'sent/create' => 'sent#create'
+  
   get "messages/inbox"
   get "messages/sent"
 
@@ -44,7 +51,7 @@ Choopro::Application.routes.draw do
   get "pros/edit_photo"
   match 'pros/:id/edit_photo' => 'pros#edit_photo', :as => :edit_photo
   
-  match ':controller/:action/:id'
+  #match ':controller/:action/:id'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Choopro - <%= yield(:title) || "Place de marché des services" %></title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<section id="top-header">
+		<div id="header" class="container">
+			<h1 id="logo">
+				<a href="/">
+				<span>Choopro</span>
+				</a>
+			</h1>
+			<nav>
+				<ul id="menu-main">
+					<li id="menu-main-discover">
+						<a href="/discover">
+						<strong>Trouver</strong>
+						<span>un professionnel</span>
+						</a>
+					</li>
+					<li id="menu-main-fund">
+						<a href="/start">
+						<strong>Cr&eacute;er</strong>
+						<span>un profil</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<form class="search" method="get" action="/projects/search" accept-charset="UTF-8">
+				<div style="margin:0;padding:0;display:inline">
+					<input type="hidden" value="?" name="utf8" autocomplete="off">
+				</div>
+				<div class="field search">
+					<span class="icon-search"></span>
+					<span class="icon-search-clear"></span>
+					<input id="term" class="input-search header text" type="text" name="term" data-tracker-name="Header Live Search" autocomplete="off">
+					<span class="icon-search-nipple"></span>
+				</div>
+			</form>
+			<ul id="authentication">
+				<li id="menu-sub-blog">
+					<a href="/blog">Blog</a>
+				</li>
+		        <% if user_signed_in? %>
+
+		          <li class="user">
+		          	<a><%= current_user.first_name %></a>
+		          	<div id="dropdown-menu" class="selected">
+		          	<ol>
+			         <%if current_user.pro.present? %>
+			          	  <li>
+				          	<%= link_to 'Voir votre profil', current_user.pro %>
+				          </li>
+			         	  <li>
+				          	<%= link_to 'Editer votre profil', edit_profil_url(current_user.pro) %>
+				         </li> 
+			         <% end%>
+			          <li>
+			          	<%= link_to "Déconnection", destroy_user_session_path , :method => :delete%>
+			          </li>
+			        </ol>
+		          </div>
+		          </li>
+		          
+		        <% else %>
+					<li>
+						<%= link_to "Inscription", new_user_registration_path %>
+					</li>
+					<li>
+						<%= link_to "Connexion", new_user_session_path %>
+					</li>
+				<% end %>
+			</ul>
+
+		</div>
+	</section>
+
+	<% if flash[:notice] %>
+      <p style="color:green"><%= flash[:notice] %></p>
+    <% end %>
+    
+    <% if flash[:error] %>
+      <p style="color:red"><%= flash[:error] %></p>
+    <% end %>
+    	
+     <div id="mailbox_list" style="border:1px solid #aaa; float:right; margin:1em; padding:1em; width:20%">
+  <p><%= link_to "Compose", sent_new_path %></p>
+  
+  <p><strong>Mailboxes</strong></p>
+  <ul>
+    <li><%= link_to "Inbox", inbox_path %></li>
+    <li><%= link_to "Sent", :controller => "sent", :action => "index" %></li>
+  </ul>
+</div>
+   
+<%= yield %>
+
+<footer id="contentinfo" >
+	<div class="body">
+
+		<ul>
+			<li role="copyr">&copy; 2011 Choopro, SAS. Tout droits reserv&eacute;s.</li>
+			
+			<li>
+				<a href="/search">A propos</a>
+			</li>
+			<li>
+				<a href="/signup">Blog</a>
+			</li>
+			<li>
+				<a href="/site/about_us">Faq</a>
+			</li>
+			<li>
+				<a href="/tos">Condition d'utilisation</a>
+			</li>
+			<li>
+				<a href="/privacy">mentions l&eacute;gales</a>
+			</li>
+			<li>
+				<a class="itLast" href="/pricing">Nous contacter</a>
+			</li>
+		</ul>
+	</div>
+</footer><!-- /#contentinfo -->
+</body>
+</html>

@@ -1,18 +1,19 @@
 class SentController < ApplicationController
+  layout "mailbox_layout"
   def index
-     @messages = current_user.sent_messages.paginate :per_page => 10, :page => params[:page], :order => "created_at DESC"
+     @requests = current_user.requests#.paginate (:per_page => 10, :page => params[:page], :order => "created_at DESC")
   end
 
   def show
-    @message = current_user.sent_messages.find(params[:id])
+    @message = current_user.requests.find(params[:id])
   end
 
   def new
-    @message = current_user.sent_messages.build
+    @message = current_user.messages.build
   end
 
   def create
-    @message = current_user.sent_messages.build(params[:message])
+    @message = current_user.messages.build(params[:message])
     
     if @message.save
       flash[:notice] = "Message sent."

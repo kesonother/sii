@@ -1,5 +1,16 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Object: <%=h(@request.subject) %></h2>
+
+<p><strong>Sent at:</strong> <%=distance_of_time_in_words(@request.created_at, Time.now)%></p>
+
+<pre><%=h @request.details %></pre>
+<% @request.request_copies.each do |copy| %>
+
+    <p><%=copy.user.pro.business_name %></p>
+  </tr>
+<% end %>
+
 
 <%= link_to 'Edit', edit_request_path(@request) %> |
 <%= link_to 'Back', requests_path %>
