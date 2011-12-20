@@ -1,2 +1,11 @@
-<h1>Mailbox#show</h1>
-<p>Find me in app/views/mailbox/show.html.erb</p>
+<h2><%=h @folder.name %></h2>
+
+<table border="1">
+  
+  <% for copy in @requests %>
+    <tr>
+      <td><%= link_to h(copy.request.subject), message_path(copy) %></td>
+      <td><%= distance_of_time_in_words(copy.request.created_at, Time.now) %> ago</td>
+    </tr>
+  <% end %>
+</table>

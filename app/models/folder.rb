@@ -9,7 +9,7 @@ class Folder
   #acts_as_tree
   belongs_to :user
   has_many :request_copies
-  has_many :messages, :class_name => "MessageCopy"
+
   
   def self.find_by_name(name)
       where(:name => name).first

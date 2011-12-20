@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
   end
   
   def show
+     @message = current_user.request_copies.find(params[:id])
   end
   
   def sent

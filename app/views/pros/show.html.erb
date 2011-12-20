@@ -6,7 +6,11 @@
 	<article>
 		<div class="quick-profil">
 			<figure>
-				<%= image_tag @pictures.image.url(:medium),"width"=>"175", "height"=>"175"%>
+				<% if @pro.pictures.exists? %>
+					<%= image_tag @pictures.image.url(:small),"width"=>"175", "height"=>"175"%>
+				<% else %>
+
+				<% end %>
 			</figure>
 			<ul class="details">
 				<ul class="">
