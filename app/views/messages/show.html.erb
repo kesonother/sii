@@ -1,3 +1,17 @@
-<h2><%=h @message.request.subject %></h2>
+<h2><%=h @copy.request.subject %></h2>
 
-<pre><%=h @message.request.details %></pre>
+<pre><%=h @copy.request.details %></pre>
+<br />
+<% @replies.each do |reply| %>
+<p><%= reply.body %></p>
+
+<%end%>
+<h2>Répondre</h2>
+
+<%= form_for :request_reply, :url => {:controller => "messages", :action => "create"} do |f| %>
+
+  <%= f.hidden_field :request_copy_id, :value => @copy.id %>
+  <%= f.hidden_field :user_id, :value => @copy.request.user.id %>
+  <p>Body:<br /> <%= f.text_area :body %></p>
+  <p><%= submit_tag "Send" %></p>
+<% end %>

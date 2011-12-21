@@ -1,5 +1,7 @@
 Choopro::Application.routes.draw do
   
+    resources :replies
+
   resources :services
   resources :pictures
   resources :pros
@@ -17,9 +19,11 @@ Choopro::Application.routes.draw do
   get "sent/new"
   get "sent/create"
   match 'sent/create' => 'sent#create'
-  
+  get "bid/show"
+
   get "messages/inbox"
   get "messages/sent"
+
 
   match 'inbox' => 'mailbox#index'
 
@@ -51,6 +55,7 @@ Choopro::Application.routes.draw do
   get "pros/edit_photo"
   match 'pros/:id/edit_photo' => 'pros#edit_photo', :as => :edit_photo
   
+  match 'requests/:id/bids' => 'requests#bids', :as => :bids  
   #match ':controller/:action/:id'
   # The priority is based upon order of creation:
   # first created -> highest priority.

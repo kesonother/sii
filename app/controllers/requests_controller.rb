@@ -80,6 +80,15 @@ class RequestsController < ApplicationController
     end
   end
 
+  def bids
+    @request = current_user.requests.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @request }
+    end 
+  end
+  
   # DELETE /requests/1
   # DELETE /requests/1.json
   def destroy

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+
+<h2>Object: <%=h(@request.subject) %></h2>
+
+<p><strong>Sent at:</strong> <%=distance_of_time_in_words(@request.created_at, Time.now)%></p>
+
+<pre><%=h @request.details %></pre>
+<% @request.request_copies.each do |copy| %>
+<% for reply in copy.request_replies %>
+    <p><%=copy.user.pro.business_name %></p>
+    <p><%= reply.body %></p>
+<%end%>
+
+  <%= form_for :request_reply, :url => {:controller => "messages", :action => "create"} do |f| %>
+
+  <%= f.hidden_field :request_copy_id, :value => copy.id %>
+  <%= f.hidden_field :user_id, :value => copy.user.id %>
+  <p>Body:<br /> <%= f.text_area :body %></p>
+  <p><%= submit_tag "Send" %></p>
+	<% end %>
+	
+  </tr>
+  <br />
+<% end %>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

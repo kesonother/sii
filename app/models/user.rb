@@ -18,7 +18,7 @@ class User
   has_one :pro
   has_many :requests
   has_many :request_copies
-  
+  has_many :request_replies
   has_many :folders 
 
   def author
