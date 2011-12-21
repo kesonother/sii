@@ -8,7 +8,11 @@
 <pre><%=h @request.details %></pre>
 <% @request.request_copies.each do |copy| %>
 <% for reply in copy.request_replies %>
-    <p><%=copy.user.pro.business_name %></p>
+	<% if current_user.id == reply.user.id %>
+		<span><%=copy.user.pro.business_name %></span>
+	<% else%>
+		<span>Vous</span>	
+	<% end %>
     <p><%= reply.body %></p>
 <%end%>
 

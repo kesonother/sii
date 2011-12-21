@@ -2,9 +2,13 @@
 
 <pre><%=h @copy.request.details %></pre>
 <br />
-<% @replies.each do |reply| %>
+<% @copy.request_replies.each do |reply| %>
+<% if current_user.id == reply.user.id %>
+<span><%= reply.user.author %></span>
+<% else%>
+<span>Vous</span>
+<% end %>
 <p><%= reply.body %></p>
-
 <%end%>
 <h2>Répondre</h2>
 
