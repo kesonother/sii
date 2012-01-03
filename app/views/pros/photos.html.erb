@@ -9,7 +9,22 @@
 			</div>
 
 			<%if current_user.pro.pictures.exists?%>
-				<%= image_tag @pictures.image.url(:medium)%>
+				<% current_user.pro.pictures.each do |photo| %>
+					<%= image_tag photo.image.url(:medium)%>
+					<%= form_for(photo, :html => { :multipart => true }) do |f| %>
+						  <%= f.label :image %>
+				  		<%= f.file_field :image %>
+					  <p><%= f.submit "Modifier" %></p>
+					<% end %>
+				<%end%>
+			<%else%>
+			
+				<%= render 'pictures/form' %>
+			<%end%>
+			
+			
+			<%if current_user.pro.pictures.exists?%>
+				<%= image_tag @pictures.avatar.url(:small)%>
 				<%= form_for(@pictures, :html => { :multipart => true }) do |f| %>
 					  <%= f.label :image %>
 			  		<%= f.file_field :image %>
@@ -18,9 +33,26 @@
 			
 			<%else%>
 			
-			<%= render 'pictures/form' %>
+<%= form_for(@picture, :html => { :multipart => true }) do |f| %>
+  <% if @picture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@picture.errors.count, "error") %> prohibited this picture from being saved:</h2>
+
+      <ul>
+      <% @picture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<%= f.file_field :avatar %>
+	
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 			<%end%>
-			
 		</article>
 	</div>
 </section>

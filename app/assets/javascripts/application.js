@@ -5,19 +5,28 @@
 // the compiled file.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
 
+
 $(document).ready(function(){ 
 	
-$("li.user").hover(function(){
+
+$("li.user").toggle(function(){
+	/*
+	$( "#dropdown-menu" ).toggle( "highlight", 500 );
+	return false;
+	},function(){
+	$( "#dropdown-menu" ).toggle( "highlight", 500 );
+	return false;
+ });*/
    //$(this).addClass("hover");
-   $('#dropdown-menu').removeClass("selected");
+  $('#dropdown-menu').removeClass("selected");
  },function(){
    //$(this).removeClass("hover");
    $('#dropdown-menu').addClass("selected");
- });
-
+  });
 
 });
 

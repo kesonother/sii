@@ -8,9 +8,10 @@
 				<p>Ces photos seront visibles sur votre profil.</p>
 			</div>
 
-			<div id="photo-profil">
+			<div id="avatar-profil">
+				<h2>Image du profil</h2>
 			<%if current_user.pro.pictures.exists?%>
-				<%= image_tag @pictures.image.url(:medium)%>
+				<%= image_tag @avatar %>
 				 <div class="actions">
 			      <%= link_to "Modifier", edit_photos_url(:id => current_user.pro) %> |
 			      <%= link_to "Supprimer", @pictures, :confirm => 'Are you sure?', :method => :delete %>
@@ -19,7 +20,18 @@
 			<%= render 'form_photo' %>
 			<%end%>
 			</div>
-			
+			<div id="photo-profil">
+				<h2>Image du profil</h2>
+			<%if current_user.pro.pictures.exists?%>
+				<%= image_tag @photos[0].image.url(:medium)%>
+				 <div class="actions">
+			      <%= link_to "Modifier", edit_photos_url(:id => current_user.pro) %> |
+			      <%= link_to "Supprimer", @pictures, :confirm => 'Are you sure?', :method => :delete %>
+			    </div>
+			<%else%>
+			<%= render 'form_photo' %>
+			<%end%>
+			</div>	
 		</article>
 	</div>
 </section>

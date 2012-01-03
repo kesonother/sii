@@ -4,6 +4,7 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree . 
+ *= require jquery-ui
 */
 /* HTML5 tags */
 header, section, footer,
@@ -520,6 +521,11 @@ margin-top:-1px;
 	border-left:1px solid #ddd;
 	border-right:1px solid #ddd;
 }
+
+#about-wrap{
+margin-top: 40px;
+}
+
 #about-wrap ul li.active-menu a{
 color: #3E78B3;
 }
@@ -543,33 +549,51 @@ color: #3E78B3;
 
 /***account topbar***/
 #account-topbar{
-	background-color: #F0EEE4;
-height:30px;
-border:1px solid #ddd;
-margin:0 0 0 0;
+/*background-color: #F2F2F2;/*#2C91C0;*/
+background: url("http://s3.amazonaws.com/choopro/statics/bg-account-menu.png") repeat scroll center bottom #F2F2F2;
+border-right:1px solid #ddd;
+margin:0 15px 0 0;
 padding:0;
-}
-#account-topbar ul{
-margin:5px 0 0 0;
-}
-#account-topbar ul li{
 float:left;
-margin-left:14px;
+width:200px;
 }
-#account-topbar ul li a{
+
+#account-topbar a{
     -moz-transition-duration: 0.33s;
     -moz-transition-property: color;
-    color: #55A4F2;
+    color:#2C91C0;
+	font-size:13px;
 	font-weight:bold;
     outline: 0 none;
     text-decoration: none;
 }
-#account-topbar ul li a:hover{
+#account-topbar a:hover{
     -moz-transition-duration: 0.33s;
     -moz-transition-property: color;
     color: #F05836;
     outline: 0 none;
     text-decoration: none;
+}
+
+.dashboard-level1 {
+    color: #A0A0A0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 165%;
+    padding: 8px 8px 8px 12px;
+    position: relative;
+}
+.dashboard-level2 {
+    padding-left: 2px;
+    position: relative;
+    width: 100%;
+}
+.nav-selectedarrow {
+    left: 179px;
+    position: absolute;
+    top: 6px;
+    z-index: 2;
 }
 /***end account topbar***/
 
@@ -621,6 +645,21 @@ margin-left:14px;
 
 
 /***acount promote***/
+#content-account {/*
+    display: block;
+    padding: 5px 5px 45px;
+	*/
+	width:745px;
+	float:left;
+}
+#content-account article.row {
+/*
+    background-color: #FFFFFF;
+    /*border-bottom: 1px solid #B6B6B6;
+    display: block;
+    padding: 25px;
+    position: relative;*/
+}
 #content-account .row .promote-header {
     /*background: url("/static/images/dashboard/promote-icons/promote-briefcase.png") no-repeat scroll 550px 50% transparent;*/
     color: #767676;
@@ -657,8 +696,34 @@ margin-left:14px;
 }
 
 
-#content-account .promote-col a.craigslist {
+
+#content-account .promote-col a.quideal {
     background: url("../img/craigslist.png") no-repeat scroll 0 0 transparent;
+}
+#content-account .promote-col a.google-places {
+    background: url("../img/google-places.png") no-repeat scroll 0 0 transparent;
+}
+#content-account .promote-col a.get-reviews {
+    background: url("../img/get-reviews.png") no-repeat scroll 0 0 transparent;
+}
+
+#content-account.promote-col a.get-verified {
+    background: url("../img/get-verified.png") no-repeat scroll 0 0 transparent;
+}
+#content-account .promote-col a.get-featured {
+    background: url("../img/get-featured.png") no-repeat scroll 0 0 transparent;
+}
+#content-account .promote-col a.buy-domain {
+    background: url("../img/promote-domain.png") no-repeat scroll 0 0 transparent;
+}
+#content-account .promote-col a.get-verified {
+    background: url("../img/get-verified.png") no-repeat scroll 0 0 transparent;
+}
+#content-account .promote-col a.email-and-share {
+    background: url("../img/email-and-share.png") no-repeat scroll 0 0 transparent;
+}
+#content-account .promote-col a.widgets-and-buttons {
+    background: url("../img/widgets-and-buttons.png") no-repeat scroll 0 0 transparent;
 }
 
 #content-account .promote-col a {

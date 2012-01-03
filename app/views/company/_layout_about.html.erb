@@ -1,28 +1,22 @@
 	<nav id="about-sidebar">
 		<ul>
 			<li >
-				<a href="/about/">Notre mission</a>
-			</li>
-			<li class="active">
-				<a href="/about/team/">Comment &ccedil;a marche?</a>
+				<%= link_to 'A propos', company_about_path() %>
 			</li>
 			<li>
-				<a href="/about/team/">L'&eacute;quipe</a>
-			</li>
-			<li >
-				<a href="/about/businesses/">Professionnels</a>
+				<%= link_to 'Equipe', company_equipe_path() %>
 			</li>
 			<li>
-				<a href="/about/logos_photos/">Logos and Photos</a>
+				<%= link_to 'Logos', company_logo_path() %>
 			</li>
 			<li>
-				<a href="/about/press/">La presse</a>
+				<%= link_to 'La presse', company_presse_path() %>
 			</li>
 			<li>
-				<a href="/about/contact/">Contactez nous</a>
+				<%= link_to 'Contact', company_contact_path() %>
 			</li>
 			<li class="last">
-				<a href="/jobs/">Emploi</a>
+				<%= link_to 'Recrutement', company_carriere_path() %>
 			</li>
 		</ul>
 	</nav>

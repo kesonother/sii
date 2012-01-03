@@ -59,6 +59,10 @@
 			         	  <li>
 				          	<%= link_to 'Editer votre profil', edit_profil_url(current_user.pro) %>
 				         </li> 
+				      <%else%>
+			         	  <li>
+				          	<%= link_to 'Créer un profil', new_pro_path() %>
+				         </li> 
 			         <% end%>
 			          <li>
 			          	<%= link_to "Déconnection", destroy_user_session_path , :method => :delete%>
@@ -105,7 +109,7 @@
 			<li role="copyr">&copy; 2011 Choopro, SAS. Tout droits reserv&eacute;s.</li>
 			
 			<li>
-				<a href="/search">A propos</a>
+				<%= link_to 'A propos', company_about_path() %>
 			</li>
 			<li>
 				<a href="/signup">Blog</a>
@@ -120,7 +124,7 @@
 				<a href="/privacy">mentions l&eacute;gales</a>
 			</li>
 			<li>
-				<a class="itLast" href="/pricing">Nous contacter</a>
+				<%= link_to 'Contact', company_contact_path() %>
 			</li>
 		</ul>
 	</div>

@@ -1,25 +1,48 @@
 	<nav id="account-topbar">
-		<ul>
-			<li >
-				<%= link_to 'Mes informations', edit_pro_path(current_user.pro) %>
-			</li>
-			<li >
+
+		<div class="dashboard-level1">
+			<!--<a class="level1" href="/dashboard/community">My Betterfly</a>
+			<br>-->
+			<div class="dashboard-level2">
+				<img src="http://betterfly.com/static/images/dashboard/icon-messages.gif">
+				<a class="" href="/dashboard/messages">Boite de reception</a>
+			</div>
+			<div class="dashboard-level2">
+				<img class="nav-selectedarrow" src="http://betterfly.com/static/images/dashboard/bg-folder-arrow.png">
+				<img src="http://betterfly.com/static/images/dashboard/icon-promote.gif">
+				<a class="" href="/dashboard/marketing-tools">Outils de promotion</a>
+			</div>
+			<center>
+				<img src="http://resources.betterfly.com/static/images/dashboard/divider.gif">
+			</center>
+
+			<div class="dashboard-level2">
+				<img src="http://betterfly.com/static/images/dashboard/icon-arrow.png">
+				<%= link_to 'Voir le profil', pro_path() %>
+			</div>
+			<div class="dashboard-level2">
+				<img src="http://betterfly.com/static/images/dashboard/icon-arrow.png">
+				<%= link_to 'Editer le profil', edit_pro_path(current_user.pro) %>
+			</div>
+			<div class="dashboard-level2">
+				<img src="http://betterfly.com/static/images/dashboard/icon-arrow.png">
 				<%= link_to 'Photos', edit_photo_url(current_user.pro) %>
-			</li>
-			<li >
+			</div>
+			<div class="dashboard-level2">
+				<img src="http://betterfly.com/static/images/dashboard/icon-arrow.png">
 				<%= link_to 'Services', edit_services_url(current_user.pro) %>
-			</li>
-			<li >
-				<a href="/about/">Outils de Promotion</a>
-			</li>
-			<li >
-				<a href="/about/">Notifications</a>
-			</li>
-			<li >
-				<a href="/about/">Param&egrave;tres</a>
-			</li>
-			<li >
-				<a href="/about/">Mot de passe</a>
-			</li>
-		</ul>
+			</div>
+			<div class="dashboard-level2">
+				<img src="http://betterfly.com/static/images/dashboard/icon-arrow.png">
+				<a class="" href="/dashboard/messages">Param&egrave;tres</a>
+			</div>
+			<div class="dashboard-level2">
+				<img src="http://betterfly.com/static/images/dashboard/icon-arrow.png">
+				<a class="" href="/dashboard/messages">Mot de passe</a>
+			</div>
+			<div class="dashboard-level2">
+				<img src="http://betterfly.com/static/images/dashboard/icon-arrow.png">
+				<a class="" href="/dashboard/messages">Deals</a>
+			</div>
+		</div>
 	</nav>

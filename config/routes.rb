@@ -1,5 +1,21 @@
 Choopro::Application.routes.draw do
   
+  get "promote/verified"
+
+  get "promote/reviews"
+
+  get "promote/futured"
+
+  get "promote/domain"
+
+  get "promote/network"
+
+  get "promote/widgets"
+
+  get "promote/advertise_quideal"
+
+  get "promote/advertise_choopro"
+
     resources :replies
 
   resources :services
@@ -39,7 +55,9 @@ Choopro::Application.routes.draw do
   
   get "pros/create"
   
-  match ":business_name" => 'pros#show', :as => :business_name
+  #match ":business_name" => 'pros#show', :as => :business_name
+
+   match 'pros/:id/promote_services' => 'pros#promote_services'
   
   get "pros/edit"
   match 'pros/:id/edit' => 'pros#edit', :as => :edit_profil

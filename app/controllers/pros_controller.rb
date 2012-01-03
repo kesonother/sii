@@ -20,8 +20,8 @@ class ProsController < ApplicationController
   # GET /pros/1
   # GET /pros/1.json
   def show
-    #@pro = Pro.find(params[:id])
-    @pro = Pro.find_by_business_name(params[:business_name])
+    @pro = Pro.find(params[:id])
+    #@pro = Pro.find_by_business_name(params[:business_name])
     @address = @pro.address
     
     if @pro.pictures.exists?
@@ -130,7 +130,9 @@ def edit_photo
      @picture = Picture.new
     
     if current_user.pro.pictures.exists?
+      @photos = current_user.pro.pictures
       @pictures = current_user.pro.pictures.first()  
+      @avatar = @pictures.avatar.url(:small)
     end
     
     respond_to do |format|
@@ -138,6 +140,15 @@ def edit_photo
       format.json { head :ok }#format.xml  { render :xml => @avatars }
     end
  end
+ 
+ def promote_services
+    
+    respond_to do |format|
+      format.html # edit_service.html.erb
+      format.json { head :ok }#format.xml  { render :xml => @avatars }
+    end
+ end
+ 
   # DELETE /pros/1
   # DELETE /pros/1.json
   def destroy
