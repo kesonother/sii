@@ -20,6 +20,11 @@ class Pro
   belongs_to :user
   embeds_one :address
   embeds_many :services 
+
+  include Sunspot::Mongoid
+  searchable do
+    text :business_name,:category
+  end
   
   #has_many :recipientrequests
   #has_many :bids

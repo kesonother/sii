@@ -1,0 +1,131 @@
+<% title @pro.business_name %>
+
+<p id="notice"><%= notice %></p>
+
+<section id="featured" class="body ui-box">
+	<article>
+		<div class="quick-profil">
+			<figure>
+				<% if @pro.pictures.exists? %>
+					<%= image_tag @pictures.image.url(:small),"width"=>"175", "height"=>"175"%>
+				<% else %>
+
+				<% end %>
+			</figure>
+			<ul class="details">
+				<ul class="">
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+				<li><a href="#"></a></li>
+			</ul>
+			</ul>
+		</div>
+		<div class="detail-profil">
+			<hgroup>
+				<h2><%= @pro.headline%></h2>
+				<h3><a href="#"><%= @pro.business_name %></a><a href="#"><%= @pro.category %></a></h3>
+			</hgroup>
+			<span class="address"><%= @address.street %>, <%= @address.zipcode %> <%= @address.city %></span>
+			<div class="text">
+	        	<p><%= @pro.business_description %></p>
+			</div>
+		</div>
+	</article>
+	<footer class="contact">
+		<a href="#" class="contactMe">Contactez moi</a>
+	</footer>
+</section>
+
+<section id="content" class="body">
+	<div class="services">
+		<section class="block rback">
+			<header >
+				<h1>Services et sp&eacute;cialit&eacute;s</h1>
+			</header>
+			<div class="servicesTableContainer">
+				<table>
+					<tbody>
+					<%if @pro.services.exists? %>
+					<% @services.each do |service| %>
+												
+						<tr>
+							<td class="service-content">
+							<h1><%= service.service_name %></h1>
+							<span><%= service.description %></span>
+							</td>
+							<td class="price"><h1><%= service.price %> &euro;</h1></td>
+							<td class="time"><h1><%= service.duration %></h1></td>
+						<!--	<td class="book"> Appeler pour r&eacute;server </td> -->
+						</tr>
+						
+					<% end %>
+					<%end%>	
+
+					
+					</tbody>
+				</table>
+			</div>
+		</section><!-- / -->
+		<section class="block rback">
+			<header>
+			<h1 class="">Recommandations</h1>
+			<a class="" href="#">Ecrire une recommandation</a>
+			</header>
+			<div> </div>		
+		</section>
+	</div><!-- /.services -->
+
+	<div class="contact">
+		<section class="map rback">
+			<header>
+				<h1 class="tit">Contact</h1>
+			</header>
+			<div class="local">
+				<div class='item vcard'>
+					<dl class='dlist inline clearfix'>
+					<dt>Telephone:</dt>
+					<dd class='tel'><%= @pro.mainphone %></dd>
+					<dt>Adresse:</dt>
+					<dd>
+						<address class='adr'>
+							<a href='http://maps.google.com?f=d&amp;daddr=3692 18th St San Francisco, CA' target='_blank'>
+								<span class='street-address'><%= @address.street %></span>
+								<br>
+								<span class='postal-code'><%= @address.zipcode %></span>,
+								<span class="locality"><%= @address.city %></span>
+								<br>
+								<span class='region'>Ile de France</span>
+							</a>
+						</address>
+					</dd>
+					</dl>
+				</div>
+				<div class="gmap" style="height:auto">
+					<img src="http://maps.google.com/maps/api/staticmap?center=Brooklyn%2C%20NY&zoom=14&size=300x200&sensor=true&markers=color:blue|Brooklyn%2C%20NY&">
+				</div>
+			</div>
+		</section>
+		<section class="online rback">
+			<header>
+				<h1 class="tit">En ligne</h1>
+			</header>
+			<div>
+				<ul>
+				<li>
+					<a href="#">Site web</a>
+				</li>
+				<li>
+					<a class="socialIcon fbIcon" href="#">facebook </a>
+				</li>
+				<li>
+					<a class="socialIcon twitterIcon" href="#">twitter </a>
+				</li>
+				</ul>
+			</div>
+		</section>
+
+	</div><!-- /.contact -->
+
+</section><!-- /#content -->
+<%= link_to 'Edit', edit_pro_path(@pro) %> |
+<%= link_to 'Back', pros_path %>

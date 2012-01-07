@@ -1,0 +1,34 @@
+<section id="about-wrap" class="body ui-box">
+
+	<div id="content-search">
+		<div class="search-list">
+			<ul class="list-profil">
+<% @pros.each do |pro| %>
+
+
+				<li class="li-card-pro">
+					<div class="pro-card-wrap">
+						<div class="pro-card">
+							<div class="pro-thumbnail">
+								<a target="" href="/projects/detroitfirefilm/burn?ref=spotlight">
+								<img class="projectphoto-little" width="180" height="135" src="http://s3.amazonaws.com/ksr/projects/52109/photo-little.jpg" alt="Photo-little">
+								</a>
+							</div>
+							<h2>
+								<strong>
+									<%= link_to pro.headline, business_name_url(pro.address.city,pro.business_name) %>
+								</strong>
+								<span class="location"><%= pro.address.address%></span>
+							</h2>
+						</div>
+					</div>
+				</li>
+<% end %>
+			</ul>		
+		</div>
+		<div class="right-request-form">
+		
+		</div>
+	</div>
+
+</section><!-- /#content -->

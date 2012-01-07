@@ -1,20 +1,4 @@
 Choopro::Application.routes.draw do
-  
-  get "promote/verified"
-
-  get "promote/reviews"
-
-  get "promote/futured"
-
-  get "promote/domain"
-
-  get "promote/network"
-
-  get "promote/widgets"
-
-  get "promote/advertise_quideal"
-
-  get "promote/advertise_choopro"
 
     resources :replies
 
@@ -43,7 +27,7 @@ Choopro::Application.routes.draw do
 
   match 'inbox' => 'mailbox#index'
 
-
+  #controller company
   get "company/about"
   get "company/equipe"
   get "company/carriere"
@@ -51,13 +35,12 @@ Choopro::Application.routes.draw do
   get "company/contact"
   get "company/presse"
 
+
+  #controller pros
   get "pros/new"
-  
   get "pros/create"
   
-  #match ":business_name" => 'pros#show', :as => :business_name
-
-   match 'pros/:id/promote_services' => 'pros#promote_services'
+  match 'pros/:id/promote_services' => 'pros#promote_services'
   
   get "pros/edit"
   match 'pros/:id/edit' => 'pros#edit', :as => :edit_profil
@@ -74,6 +57,25 @@ Choopro::Application.routes.draw do
   match 'pros/:id/edit_photo' => 'pros#edit_photo', :as => :edit_photo
   
   match 'requests/:id/bids' => 'requests#bids', :as => :bids  
+  
+  #match ":business_name" => 'pros#show', :as => :business_name
+  match ":city/:business_name" => 'home#show_pro', :as => :business_name
+ 
+  #controller promote
+  get "promote/verified"
+  get "promote/reviews"
+  get "promote/futured"
+  get "promote/domain"
+  get "promote/network"
+  get "promote/widgets"
+  get "promote/advertise_quideal"
+  get "promote/advertise_choopro"
+  
+  
+  #controller search
+  get "search/index"
+  match "search" => 'search#index'
+  
   #match ':controller/:action/:id'
   # The priority is based upon order of creation:
   # first created -> highest priority.

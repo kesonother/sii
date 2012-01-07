@@ -7,20 +7,6 @@
 				<h1>Editer vos photos</h1>
 				<p>Ces photos seront visibles sur votre profil.</p>
 			</div>
-
-			<%if current_user.pro.pictures.exists?%>
-				<% current_user.pro.pictures.each do |photo| %>
-					<%= image_tag photo.image.url(:medium)%>
-					<%= form_for(photo, :html => { :multipart => true }) do |f| %>
-						  <%= f.label :image %>
-				  		<%= f.file_field :image %>
-					  <p><%= f.submit "Modifier" %></p>
-					<% end %>
-				<%end%>
-			<%else%>
-			
-				<%= render 'pictures/form' %>
-			<%end%>
 			
 			
 			<%if current_user.pro.pictures.exists?%>

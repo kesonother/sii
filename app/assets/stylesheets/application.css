@@ -793,4 +793,135 @@ border-radius: 10px;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: bold;
 }
+/******
+recherche
+******/
+#content-search {
+width:100%;
+height:300px;
+}
+
+.search-list{
+width:660px;
+float:left;
+
+}
+
+.right-request-form{
+width:300px;
+float:right;
+height:300px;
+background:url("http://gowalla.com/images/web/details/photo-grid-fill.png?1318861398") repeat scroll 0 0 transparent;
+}
+
+.li-card-pro {
+	display: inline;
+    float: left;
+    padding-right: 0;
+    width: 200px;
+    margin-right: 8px;
+}
+
+.pro-card-wrap {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border-radius: 6px 6px 6px 6px;
+    clear: both;
+    margin-bottom: 20px;
+	padding: 4px;
+}
+
+.pro-card-wrap .pro-card {
+    background-position: 0 307px;
+    height: 220px;
+    padding: 5px;
+
+}
+
+.pro-card-wrap .pro-card {
+    background-color: #FFFFFF;
+
+    background-repeat: repeat-x;
+    border: 1px solid #DDDDDD;
+    border-radius: 6px 6px 6px 6px;
+    overflow: hidden;
+    position: relative;
+}
+.pro-card-wrap .pro-card h2 {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    margin-bottom: 5px;
+    padding: 0 5px;
+}
+.pro-card-wrap .pro-card h2 strong {
+    display: block;
+    height: 30px;
+    overflow: hidden;
+}
+.pro-card-wrap .pro-card h2 a {
+color:#3E78B3;
+}
+.pro-card-wrap .pro-card h2 a:hover {
+color:#F97257;
+}
+.pro-card-wrap .pro-card h2 span {
+    color: #999999;
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+    max-height: 15px;
+    overflow: hidden;
+    padding-top: 2px;
+}
+.pro-card-wrap .pro-card p {
+    color: #999999 !important;
+    font-size: 12px !important;
+    height: 60px;
+    line-height: 15px;
+    overflow: hidden;
+    padding: 0 5px;
+    text-overflow: ellipsis;
+}
+
+.list-profil li .location {
+    background: url("http://www.authenticjobs.com/img/map-marker-light.png") no-repeat scroll 0 50% transparent;
+    float: left;
+    height: 16px;
+    left: auto;
+    max-width: none;
+    overflow: visible;
+    padding-left: 16px;
+	margin-left:5px;
+	margin-top:5px;
+    position: static;
+    text-align: left;
+    top: auto;
+    white-space: normal;
+    width: 145px;
+	font-size:12px;
+}
+
+.images-services{
+
+background:url("../img/stock-photo-16760078-man-in-athletic-clothes-take-a-break.jpg") repeat scroll 0 0 transparent;
+width:980px;
+height:170px;
+
+    overflow: hidden;
+}
+.images-services h2{
+max-width:200px;
+font-size:40px;
+color:#fff;
+ background-color: rgba(40, 39, 39, 0.7);
+padding:8px;
+margin-top:110px;
+}
+
+/**contant for general page***/
+#about-wrap{
+
+	margin-top: 2.5em;
+
+}
 /***** end about style****/
