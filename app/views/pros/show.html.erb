@@ -7,7 +7,7 @@
 		<div class="quick-profil">
 			<figure>
 				<% if @pro.pictures.exists? %>
-					<%= image_tag @pictures.image.url(:small),"width"=>"175", "height"=>"175"%>
+					<%= image_tag @pictures.image.url(:medium),"width"=>"175", "height"=>"175"%>
 				<% else %>
 
 				<% end %>
